@@ -7,8 +7,8 @@ metadata:
 spec:
   ports:
     - protocol: TCP
-      port: 3360 # The port that other pods inside the cluster will connect to
-      targetPort: vprodb-port # The port your actual application/container is listening on
+      port: 3306 # The port that other pods inside the cluster will connect to
+      targetPort: 3306 # The port your actual application/container is listening on
   selector:
     app: vprodb # Must match the label on your Deployment/Pod template
   type: ClusterIP
