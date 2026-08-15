@@ -1,0 +1,14 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: vprodb
+  labels:
+    app: vprodb
+spec:
+  ports:
+    - protocol: TCP
+      port: 3360 # The port that other pods inside the cluster will connect to
+      targetPort: vprodb-port # The port your actual application/container is listening on
+  selector:
+    app: vprodb # Must match the label on your Deployment/Pod template
+  type: ClusterIP
